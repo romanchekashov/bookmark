@@ -1,6 +1,30 @@
 # Bookmark
 Clone of https://www.instapaper.com/
 
+## Browser extension: Chrome
+- authorize user
+    - unauthorized user redirected to /login?r=redirectUrl
+        - authorize user -> go to redirectUrl
+        - create new user -> (waits for email confirmation: optional) -> go to redirectUrl
+- save link: /save?l=link
+
+## Sitemap
+Pages:
+- / - Home page with links
+- /sign-in - Sign In(Form: email(input), password(input), keep me logged in(checkbox), forgot password?(link), Sign In(btn))
+- /reset-password - Forgot password(Form: email(input), Email me a password-reset link(btn))
+- /sign-up - Create An Account(Form: email(input), password(input), I'am not a robot(google reCAPTCHA), keep me logged in(checkbox), Create Account(btn))
+Api:
+- links:
+    - POST: /api/links - save link
+    - GET: /api/links - get links for authorized user with pagination, search query, hasGroup flag
+    - DELETE: /api/links/:id - delete link
+- folders:
+    - POST: /api/folders - create folder
+    - GET: /api/folders - get folders
+    - DELETE: /api/folders/:id - delete folder(id): doesn't delete links
+    - PUT: /api/folders/:id?linkId=linkId - add link(linkId) to folder(id)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
