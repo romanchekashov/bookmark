@@ -14,7 +14,7 @@ Pages:
 - /sign-in - Sign In(Form: email(input), password(input), keep me logged in(checkbox), forgot password?(link), Sign In(btn))
 - /reset-password - Forgot password(Form: email(input), Email me a password-reset link(btn))
 - /sign-up - Create An Account(Form: email(input), password(input), I'am not a robot(google reCAPTCHA), keep me logged in(checkbox), Create Account(btn))
-Api:
+API:
 - links:
     - POST: /api/links - save link
     - GET: /api/links - get links for authorized user with pagination, search query, hasGroup flag
